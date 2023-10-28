@@ -1,0 +1,45 @@
+@use '../utilities' as *;
+@use '../layout' as *;
+@use '../abstracts' as *;
+
+// TODO check width & flex
+/* .header {
+  //  @extend .flex;
+  margin-inline: auto;
+  // margin-inline: auto;
+} */
+
+.primary-header {
+  @include flex;
+  justify-content: space-between;
+  align-items: center;
+  // padding-block: 1.25rem;
+  position: relative;
+  grid-area: content;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 500ms ease-in-out forwards;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  animation: fade-out 500ms ease-in-out forwards;
+}

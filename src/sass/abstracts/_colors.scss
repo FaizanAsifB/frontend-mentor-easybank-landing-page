@@ -1,0 +1,47 @@
+$clr-primary: hsl(233, 26%, 24%);
+$clr-secondary: hsl(192, 70%, 51%);
+$clr-accent: hsl(136, 65%, 51%);
+$clr-dark-gray: hsl(233, 8%, 62%);
+$clr-light-gray: hsl(220, 16%, 96%);
+$clr-lightest-gray: hsl(0, 0%, 98%);
+$clr-white: hsl(0, 0%, 100%);
+
+$clr-gradient: linear-gradient(to right, $clr-accent, $clr-secondary);
+
+$colors: (
+  'primary': $clr-primary,
+  'secondary': $clr-secondary,
+  'accent': $clr-accent,
+  'dark-gray': $clr-dark-gray,
+  'light-gray': $clr-light-gray,
+  'lightest-gray': $clr-lightest-gray,
+  'white': $clr-white,
+);
+
+@each $key, $val in $colors {
+  .text-#{$key} {
+    color: $val;
+  }
+  .text-hover-#{$key} {
+    &:hover {
+      color: $val;
+    }
+  }
+  .bg-#{$key} {
+    background-color: $val;
+  }
+
+  @for $i from 0 through 100 {
+    .text-#{$key}-alpha-#{$i} {
+      color: rgba($val, calc($i / 100));
+    }
+    .text-hover-#{$key}-alpha-#{$i} {
+      &:hover {
+        color: rgba($val, calc($i / 100));
+      }
+    }
+    .bg-#{$key}-alpha-#{$i} {
+      background-color: rgba($val, calc($i / 100));
+    }
+  }
+}

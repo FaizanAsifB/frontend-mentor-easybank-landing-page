@@ -1,0 +1,10 @@
+$sm-border-radius: 1.25em;
+$border-radius-round: 50%;
+
+.border-radius-sm {
+  border-radius: $sm-border-radius;
+}
+
+.border-round {
+  border-radius: $border-radius-round;
+}

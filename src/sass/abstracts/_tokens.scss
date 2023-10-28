@@ -1,0 +1,29 @@
+@use 'typography' as *;
+@use 'colors' as *;
+@use 'sizes' as *;
+
+//body
+$body-font-family: $ff-primary;
+$body-font-size: var(--fs-400);
+$body-font-color: $clr-dark-gray;
+$body-background-color: $clr-white;
+
+body {
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  color: $body-font-color;
+  background-color: $body-background-color;
+}
+
+//layout
+$fs-brand-title: --fs-600;
+$max-width: 1200px;
+
+//button
+$btn-small-padding: $base-padding * 0.5 $base-padding;
+$btn-med-padding: $base-padding $base-padding * 2;
+$btn-large-padding: $base-padding * 2 $base-padding * 4;
+
+$btn-padding: $btn-large-padding;
+
+$base-border-thickness: 1px;

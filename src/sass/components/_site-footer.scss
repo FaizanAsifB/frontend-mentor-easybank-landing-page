@@ -1,0 +1,104 @@
+@use 'abstracts' as *;
+
+.footer {
+  grid-area: content;
+  display: grid;
+  gap: 2rem;
+  place-items: center;
+  padding-block: 2.5rem;
+  font-size: var(--fs-200);
+
+  & .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  // &__nav ul {
+  //   display: flex;
+  //   gap: 0.5rem;
+  //   flex-direction: column;
+  //   flex-wrap: wrap;
+  // }
+
+  &__nav ul {
+    display: grid;
+    gap: 0.5rem;
+    // flex-direction: column;
+    // flex-wrap: wrap;
+
+    & li:hover {
+      color: $clr-accent;
+    }
+  }
+
+  & p {
+    color: $clr-dark-gray;
+    font-size: var(--fs-200);
+  }
+}
+
+.social-icon:hover path {
+  fill: $clr-accent;
+}
+
+@media (min-width: 54rem) {
+  .footer {
+    display: grid;
+    grid-template-areas:
+      'logo links links. button'
+      'social links links . copyright';
+    justify-items: start;
+
+    & .logo {
+      grid-area: logo;
+    }
+
+    & .social-icons {
+      grid-area: social;
+    }
+
+    &__nav {
+      grid-area: links;
+    }
+
+    &__nav ul {
+      display: grid;
+      grid-template-areas:
+        'about careers'
+        'contact support'
+        'blog privacy';
+      gap: 0.5rem 5rem;
+      text-align: start;
+
+      & li:nth-child(1) {
+        grid-area: about;
+      }
+
+      & li:nth-child(2) {
+        grid-area: contact;
+      }
+      & li:nth-child(3) {
+        grid-area: blog;
+      }
+      & li:nth-child(4) {
+        grid-area: careers;
+      }
+      & li:nth-child(5) {
+        grid-area: support;
+      }
+      & li:nth-child(6) {
+        grid-area: privacy;
+      }
+    }
+
+    & .btn {
+      grid-area: button;
+      justify-self: end;
+    }
+
+    & p {
+      grid-area: copyright;
+      justify-self: end;
+    }
+  }
+}

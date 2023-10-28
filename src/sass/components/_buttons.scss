@@ -1,0 +1,55 @@
+@use '../abstracts/' as *;
+@use '../utilities/' as *;
+
+@mixin btn($bg-color: #e2e2e2) {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  // padding: $btn-padding;
+  background-image: $bg-color;
+}
+
+.btn {
+  @include btn($clr-gradient);
+  position: relative;
+  font-size: 0.825rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  padding: 1em 2em;
+  border-radius: 30px;
+  color: $clr-white;
+  &:hover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($clr-white, 0.4);
+    border-radius: 30px;
+  }
+}
+
+// @each $key, $val in $colors {
+//   .btn-#{$key} {
+//     @include btn($val);
+//     &:hover {
+//       background-color: $val;
+//     }
+//   }
+//   .btn-outlined-#{$key} {
+//     @include btn(#fff);
+//     border: $base-border-thickness solid $val;
+//     &:hover {
+//       background-color: $val;
+//     }
+//   }
+//   .btn-complement-#{$key} {
+//     @include btn($val);
+//     color: light-comp($val);
+//     &:hover {
+//       color: $val;
+//       background-color: light-comp($val);
+//     }
+//   }
+// }
